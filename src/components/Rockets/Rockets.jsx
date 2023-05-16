@@ -29,7 +29,7 @@ const Rockets = () => {
     )
   }
   return (
-    <div>
+    <div className="container-md">
      {rockets.map((rocket) => {
       return <Rocket key={rocket.id} rocketData={rocket} />
      })}

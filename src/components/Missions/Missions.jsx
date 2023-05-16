@@ -58,7 +58,15 @@ const Missions = () => {
                   sx={{ border: 1 }}
                   className="mission-name"
                 >
-                  {mission.mission_name}
+                  <h4
+                    style={{
+                      textAlign: "center",
+                      fontSize: 22,
+                      fontFamily: "monospace",
+                    }}
+                  >
+                    {mission.mission_name}
+                  </h4>
                 </TableCell>
                 <TableCell sx={{ border: 1 }} className="mission-desc">
                   <p>{mission.description}</p>
@@ -69,7 +77,11 @@ const Missions = () => {
                       <h3>not a member</h3>
                     </TableCell>
                     <TableCell sx={{ border: 1 }} className="mission-option">
-                      <button style={{color: 'gray'}} id={mission.mission_id} onClick={(e) => dispatch(joinMission(e.target.id))}>
+                      <button
+                        style={{ color: "gray" }}
+                        id={mission.mission_id}
+                        onClick={(e) => dispatch(joinMission(e.target.id))}
+                      >
                         Join Mission
                       </button>
                     </TableCell>
@@ -78,10 +90,16 @@ const Missions = () => {
                 {mission.joined && (
                   <>
                     <TableCell sx={{ border: 1 }} className="mission-status">
-                      <h3 style={{backgroundColor: 'rgb(63, 152, 168)'}}>Active Member</h3>
+                      <h3 style={{ backgroundColor: "rgb(63, 152, 168)" }}>
+                        Active Member
+                      </h3>
                     </TableCell>
                     <TableCell sx={{ border: 1 }} className="mission-option">
-                      <button style={{color: 'red', borderColor: 'red'}} id={mission.mission_id} onClick={(e) => dispatch(cancelMission(e.target.id))}>
+                      <button
+                        style={{ color: "red", borderColor: "red" }}
+                        id={mission.mission_id}
+                        onClick={(e) => dispatch(cancelMission(e.target.id))}
+                      >
                         Leave Mission
                       </button>
                     </TableCell>

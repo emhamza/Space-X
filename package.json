@@ -15,12 +15,18 @@
     "@mui/material": "^5.13.0",
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
+<<<<<<< HEAD
+=======
+    "boostrap": "^2.0.0",
+    "bootstrap": "^5.2.3",
+>>>>>>> ccd57f86a86ef8817728a916afe83cf0336fa0fb
     "react": "^18.2.0",
     "react-axios": "^2.0.6",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
     "react-router": "^6.11.1",
     "react-router-dom": "^6.11.1",
+    "reactstrap": "^9.1.10",
     "redux-logger": "^3.0.6",
     "sass": "^1.62.1"
   },

@@ -1,58 +1,99 @@
 // eslint-disable-next-line no-unused-vars
-import * as React from 'react';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import './Missions.scss';
-import { auto } from '@popperjs/core';
-
-function createData(mission, description, status, option) {
-  return { mission, description, status, option };
-}
-
-const rows = [
-  createData('Thaicom', 'Thaicom is a satellite operator company that provides satellite-based communication and broadcasting services in Asia and Africa. Its mission is to connect people, businesses, and organizations with reliable and innovative satellite solutions. Thaicom aims to deliver high-quality and cost-effective satellite services to its customers and improve the connectivity and communication infrastructure in the regions it operates in', 'not a member', 'Join Mission'),
-  createData('Thaicom', 'Thaicom is a satellite operator company that provides satellite-based communication and broadcasting services in Asia and Africa. Its mission is to connect people, businesses, and organizations with reliable and innovative satellite solutions. Thaicom aims to deliver high-quality and cost-effective satellite services to its customers and improve the connectivity and communication infrastructure in the regions it operates in', 'not a member', 'Join Mission'),
-  createData('Thaicom', 'Thaicom is a satellite operator company that provides satellite-based communication and broadcasting services in Asia and Africa. Its mission is to connect people, businesses, and organizations with reliable and innovative satellite solutions. Thaicom aims to deliver high-quality and cost-effective satellite services to its customers and improve the connectivity and communication infrastructure in the regions it operates in', 'not a member', 'Join Mission'),
-  createData('Thaicom', 'Thaicom is a satellite operator company that provides satellite-based communication and broadcasting services in Asia and Africa. Its mission is to connect people, businesses, and organizations with reliable and innovative satellite solutions. Thaicom aims to deliver high-quality and cost-effective satellite services to its customers and improve the connectivity and communication infrastructure in the regions it operates in', 'not a member', 'Join Mission'),
-  createData('Thaicom', 'Thaicom is a satellite operator company that provides satellite-based communication and broadcasting services in Asia and Africa. Its mission is to connect people, businesses, and organizations with reliable and innovative satellite solutions. Thaicom aims to deliver high-quality and cost-effective satellite services to its customers and improve the connectivity and communication infrastructure in the regions it operates in', 'not a member', 'Join Mission'),
-
-];
+import * as React from "react";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import "./Missions.scss";
+import {
+  getMissions,
+  joinMission,
+  cancelMission,
+} from "../../redux/missionSlice/missionsSlice";
 
 const Missions = () => {
+  const missions = useSelector((state) => state.mission.missions);
+  const { Loading, error } = useSelector((state) => state.mission);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getMissions());
+  }, [dispatch]);
+
+  if (Loading) return <h4>Loading...</h4>;
+
+  if (error) return <h5>Error!!</h5>;
+
+  const missionsList = JSON.parse(JSON.stringify(missions));
   return (
-    <TableContainer className='table-container' component={Paper}>
-      <Table className='table' aria-label="simple table" sx={{ margin: auto, padding: auto }}>
-        <TableHead>
-          <TableRow>
-            <TableCell className='mission-name'>Mission</TableCell>
-            <TableCell className='mission-desc'>Description</TableCell>
-            <TableCell className='mission-status'>Status</TableCell>
-            <TableCell className='mission-option'></TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.mission}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {row.mission}
+    <div className="table-container">
+      <TableContainer component={Paper}>
+        <Table className="table" aria-label="simple table">
+          <TableHead>
+            <TableRow sx={{ border: 1 }}>
+              <TableCell sx={{ border: 1 }}>Mission</TableCell>
+              <TableCell sx={{ border: 1 }} className="mission-desc">
+                Description
               </TableCell>
-              <TableCell><p>{row.description}</p></TableCell>
-              <TableCell><h3>{row.status}</h3></TableCell>
-              <TableCell><button>{row.option}</button></TableCell>
+              <TableCell sx={{ border: 1 }} className="mission-status">
+                Status
+              </TableCell>
+              <TableCell
+                sx={{ border: 1 }}
+                className="mission-option"
+              ></TableCell>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
-  )
-}
+          </TableHead>
+          <TableBody>
+            {missionsList.map((mission) => (
+              <TableRow key={mission.mision_id} sx={{ border: 1 }}>
+                <TableCell
+                  component="th"
+                  scope="row"
+                  sx={{ border: 1 }}
+                  className="mission-name"
+                >
+                  {mission.mission_name}
+                </TableCell>
+                <TableCell sx={{ border: 1 }} className="mission-desc">
+                  <p>{mission.description}</p>
+                </TableCell>
+                {!mission.joined && (
+                  <>
+                    <TableCell sx={{ border: 1 }} className="mission-status">
+                      <h3>not a member</h3>
+                    </TableCell>
+                    <TableCell sx={{ border: 1 }} className="mission-option">
+                      <button style={{color: 'gray'}} id={mission.mission_id} onClick={(e) => dispatch(joinMission(e.target.id))}>
+                        Join Mission
+                      </button>
+                    </TableCell>
+                  </>
+                )}
+                {mission.joined && (
+                  <>
+                    <TableCell sx={{ border: 1 }} className="mission-status">
+                      <h3 style={{backgroundColor: 'rgb(63, 152, 168)'}}>Active Member</h3>
+                    </TableCell>
+                    <TableCell sx={{ border: 1 }} className="mission-option">
+                      <button style={{color: 'red', borderColor: 'red'}} id={mission.mission_id} onClick={(e) => dispatch(cancelMission(e.target.id))}>
+                        Leave Mission
+                      </button>
+                    </TableCell>
+                  </>
+                )}
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </div>
+  );
+};
 
 export default Missions;

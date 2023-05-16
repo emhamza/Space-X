@@ -9,7 +9,9 @@
   border: none;
 }
 
-.mission-name, .mission-status, .mission-option {
+.mission-name,
+.mission-status,
+.mission-option {
   width: 200px;
   display: flex;
   justify-content: center;
@@ -21,7 +23,6 @@
 }
 
 .mission-status {
-
   h3 {
     font-family: monospace;
     text-transform: uppercase;
@@ -35,7 +36,6 @@
 }
 
 .mission-option {
-
   button {
     margin-left: 30px;
     padding: 5px 10px;

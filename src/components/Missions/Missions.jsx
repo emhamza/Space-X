@@ -74,7 +74,9 @@ const Missions = () => {
                 {!mission.joined && (
                   <>
                     <TableCell sx={{ border: 1 }} className="mission-status">
-                      <h3>not a member</h3>
+                      <h3 style={{ textTransform: "uppercase" }}>
+                        not a member
+                      </h3>
                     </TableCell>
                     <TableCell sx={{ border: 1 }} className="mission-option">
                       <button
@@ -90,7 +92,12 @@ const Missions = () => {
                 {mission.joined && (
                   <>
                     <TableCell sx={{ border: 1 }} className="mission-status">
-                      <h3 style={{ backgroundColor: "rgb(63, 152, 168)" }}>
+                      <h3
+                        style={{
+                          backgroundColor: "rgb(63, 152, 168)",
+                          color: "#fff",
+                        }}
+                      >
                         Active Member
                       </h3>
                     </TableCell>

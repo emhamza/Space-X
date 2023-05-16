@@ -80,7 +80,7 @@ const Missions = () => {
                     </TableCell>
                     <TableCell sx={{ border: 1 }} className="mission-option">
                       <button
-                        style={{ color: "gray" }}
+                        style={{ color: "rgb(85, 91, 92)" }}
                         id={mission.mission_id}
                         onClick={(e) => dispatch(joinMission(e.target.id))}
                       >

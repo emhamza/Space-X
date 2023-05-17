@@ -1,0 +1,45 @@
+.table-container {
+  padding: 0 120px;
+  border: none;
+  margin: 20px 0;
+}
+
+.table {
+  margin: auto;
+  border: none;
+}
+
+.mission-name,
+.mission-status,
+.mission-option {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mission-desc {
+  width: 60vw;
+}
+
+.mission-status {
+  h3 {
+    font-family: monospace;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 900;
+    border-radius: 15px;
+    padding: 5px 10px;
+    border: 2px solid rgb(85, 91, 92);
+  }
+}
+
+.mission-option {
+  button {
+    margin-left: 30px;
+    padding: 5px 10px;
+    align-self: center;
+    text-align: center;
+    border-radius: 5px;
+  }
+}

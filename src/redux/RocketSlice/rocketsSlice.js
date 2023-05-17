@@ -19,7 +19,6 @@ const rocketSlice = createSlice({
     reducers: {
         reserveRocket: (state, {payload}) => {
             const newState = state.rockets.map((rocket) => {
-                console.log(payload)
                 if(rocket.id === payload){
                     return { ...rocket, reserved: true};
                 }
@@ -49,7 +48,8 @@ const rocketSlice = createSlice({
             id: info.id,
             rocket_name: info.rocket_name,
             description: info.description,
-            flickr_images: info.flickr_images[0]
+            flickr_images: info.flickr_images[0],
+            reserved: false,
       }));
       state.rockets = filterdRockets;
       });

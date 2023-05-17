@@ -10,7 +10,7 @@ const Navbar = () => {
       </a>
       <ul className="links-container">
         <li>
-          <NavLink to="/" className="nav-routes" activeClassName="active">
+          <NavLink to="/" className="nav-routes" activeClassName="active" activeStyle={{ color: 'red' }}>
             Rockets
           </NavLink>
         </li>

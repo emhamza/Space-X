@@ -41,10 +41,19 @@ export const missionsSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(getMissions.fulfilled, (state, action) => {
+    builder.addCase(getMissions.fulfilled, (state, { payload }) => {
       state.Loading = false;
       state.error = null;
-      state.missions = action.payload;
+      const filteredMissions = [];
+      payload.map((mission) =>
+        filteredMissions.push({
+          mission_id: mission.mission_id,
+          mission_name: mission.mission_name,
+          description: mission.description,
+          joined: false,
+        })
+      );
+      state.missions = filteredMissions;
     });
     builder.addCase(getMissions.rejected, (state, action) => {
       state.Loading = false;

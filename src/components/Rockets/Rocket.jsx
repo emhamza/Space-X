@@ -26,7 +26,7 @@ const Rocket = ({ rocketData }) => {
               <Button className="cancel-btn" type="submit">Reserved</Button>
               {rocketData.description}
             </p>
-            <Button color="primary" onClick={cancelReservationHandler}>Cancel Reservation</Button>
+            <Button className="btn-outline-secondary" color="" onClick={cancelReservationHandler}>Cancel Reservation</Button>
           </>
         )}
         {!rocketData.reserved && (

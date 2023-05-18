@@ -22,7 +22,9 @@ const Missions = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getMissions());
+    if (Missions.length === 0) {
+      dispatch(getMissions());
+    }
   }, [dispatch]);
 
   if (Loading) return <h4>Loading...</h4>;

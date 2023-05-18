@@ -1,0 +1,71 @@
+$bg-color: rgb(187, 187, 181);
+$dark: #000;
+
+.table-container {
+  padding: 0 120px;
+  border: none;
+  margin: 20px 0;
+}
+
+.table {
+  margin: auto;
+  border: none;
+}
+
+.table-row:nth-child(odd) {
+  background-color: $bg-color;
+}
+
+.mission-name,
+.mission-status,
+.mission-option {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mission-name {
+  h4 {
+    background-color: rgba($dark, 0);
+  }
+}
+
+.mission-desc {
+  width: 60vw;
+
+  p {
+    background-color: rgba($dark, 0);
+  }
+}
+
+.mission-status {
+  h3 {
+    font-family: monospace;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 900;
+    border-radius: 15px;
+    padding: 5px 10px;
+    border: 2px solid rgb(85, 91, 92);
+  }
+}
+
+.mission-option {
+  button {
+    color: #000;
+    margin-left: 20px;
+    padding: 5px 10px;
+    align-self: center;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgba($dark, 0);
+
+    &:hover {
+      background-color: rgb(117, 183, 246);
+      color: rgb(255, 255, 255) !important;
+    }
+  }
+}

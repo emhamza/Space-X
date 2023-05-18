@@ -1,3 +1,6 @@
+$bg-color: rgb(187, 187, 181);
+$dark: #000;
+
 .table-container {
   padding: 0 120px;
   border: none;
@@ -9,6 +12,10 @@
   border: none;
 }
 
+.table-row:nth-child(odd) {
+  background-color: $bg-color;
+}
+
 .mission-name,
 .mission-status,
 .mission-option {
@@ -18,8 +25,19 @@
   align-items: center;
 }
 
+.mission-name {
+
+  h4 {
+    background-color: rgba($dark, 0);
+  }
+}
+
 .mission-desc {
   width: 60vw;
+
+  p {
+    background-color: rgba($dark, 0);
+  }
 }
 
 .mission-status {
@@ -36,10 +54,19 @@
 
 .mission-option {
   button {
+    color: #000000;
     margin-left: 30px;
     padding: 5px 10px;
     align-self: center;
     text-align: center;
     border-radius: 5px;
+    font-size: 16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgba($dark, 0);
+
+    &:hover {
+      background-color: rgb(117, 183, 246);
+      color: rgb(255, 255, 255) !important;
+    }
   }
 }

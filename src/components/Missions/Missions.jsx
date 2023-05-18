@@ -22,7 +22,7 @@ const Missions = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (Missions.length === 0) {
+    if (missions.length === 0) {
       dispatch(getMissions());
     }
   }, [dispatch]);
@@ -53,7 +53,7 @@ const Missions = () => {
           </TableHead>
           <TableBody>
             {missionsList.map((mission) => (
-              <TableRow key={mission.mision_id} sx={{ border: 1 }}>
+              <TableRow className="table-row" key={mission.mision_id} sx={{ border: 1 }}>
                 <TableCell
                   component="th"
                   scope="row"

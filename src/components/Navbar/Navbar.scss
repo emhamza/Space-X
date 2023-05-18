@@ -69,9 +69,24 @@ img {
       text-decoration: underline;
       color: rgb(60, 58, 58);
     }
+
+    &:active::before {
+      text-decoration: underline;
+    }
   }
+}
+
+.vl {
+  border-left: 2px solid rgb(28, 29, 28);
+  height: 25px;
+  margin-top: 5px;
 }
 
 .active {
   color: rgb(60, 58, 58);
+  text-decoration: underline !important;
+}
+
+.nav-routes:active::before {
+  text-decoration: underline;
 }

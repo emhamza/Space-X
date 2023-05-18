@@ -47,6 +47,10 @@ img {
   height: 40px;
 }
 
+.nav-routes:active::before {
+  text-decoration: underline;
+}
+
 .links-container {
   display: flex;
   list-style-type: none;
@@ -85,8 +89,4 @@ img {
 .active {
   color: rgb(60, 58, 58);
   text-decoration: underline !important;
-}
-
-.nav-routes:active::before {
-  text-decoration: underline;
 }

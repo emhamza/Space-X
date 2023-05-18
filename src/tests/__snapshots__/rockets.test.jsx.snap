@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Rockets > renders rocket correctly 1`] = `
+<div>
+  <p>
+    Bear With Us, Your Rockets are Loading
+  </p>
+</div>
+`;
+
+exports[`renders rocket correctly 1`] = `
+<div>
+  <p>
+    Bear With Us, Your Rockets are Loading
+  </p>
+</div>
+`;

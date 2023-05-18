@@ -1,0 +1,58 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Navbar > renders navbar correctly 1`] = `
+<header>
+  <a
+    className="logo-container"
+    href="/"
+  >
+    <img
+      alt="logo"
+      src="src/assets\\\\planet.png"
+    />
+    <h1>
+      Space Travelers' Hub
+    </h1>
+  </a>
+  <ul
+    className="links-container"
+  >
+    <li>
+      <a
+        activeClassName="active"
+        activeStyle={
+          {
+            "color": "red",
+          }
+        }
+        aria-current="page"
+        className="nav-routes active"
+        href="/"
+        onClick={[Function]}
+      >
+        Rockets
+      </a>
+    </li>
+    <li>
+      <a
+        activeClassName="active"
+        className="nav-routes"
+        href="/missions"
+        onClick={[Function]}
+      >
+        Missions
+      </a>
+    </li>
+    <li>
+      <a
+        activeClassName="active"
+        className="nav-routes"
+        href="/profile"
+        onClick={[Function]}
+      >
+        My Profile
+      </a>
+    </li>
+  </ul>
+</header>
+`;

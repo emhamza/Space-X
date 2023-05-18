@@ -53,7 +53,11 @@ const Missions = () => {
           </TableHead>
           <TableBody>
             {missionsList.map((mission) => (
-              <TableRow className="table-row" key={mission.mision_id} sx={{ border: 1 }}>
+              <TableRow
+                className="table-row"
+                key={mission.mision_id}
+                sx={{ border: 1 }}
+              >
                 <TableCell
                   component="th"
                   scope="row"
@@ -76,7 +80,9 @@ const Missions = () => {
                 {!mission.joined && (
                   <>
                     <TableCell sx={{ border: 1 }} className="mission-status">
-                      <h3 style={{ textTransform: "uppercase" }}>
+                      <h3
+                        style={{ textTransform: "uppercase", border: "none" }}
+                      >
                         not a member
                       </h3>
                     </TableCell>
@@ -98,6 +104,7 @@ const Missions = () => {
                         style={{
                           backgroundColor: "rgb(63, 152, 168)",
                           color: "#fff",
+                          border: "none",
                         }}
                       >
                         Active Member

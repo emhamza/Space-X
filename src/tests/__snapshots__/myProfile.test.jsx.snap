@@ -1,0 +1,36 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MyProfile > renders MyProfile correctly 1`] = `
+<div
+  style={
+    {
+      "display": "flex",
+      "paddingLeft": 90,
+      "paddingRight": 90,
+    }
+  }
+>
+  <div
+    className="container-md"
+  >
+    <div
+      className="p-3"
+    >
+      <h2>
+        My Missions
+      </h2>
+    </div>
+  </div>
+  <div
+    className="container-md"
+  >
+    <div
+      className="p-3"
+    >
+      <h2>
+        My Rockets
+      </h2>
+    </div>
+  </div>
+</div>
+`;

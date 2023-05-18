@@ -18,7 +18,7 @@ const rocketSlice = createSlice({
     initialState,
     reducers: {
         reserveRocket: (state, {payload}) => {
-            const newState = state.rockets.map((rocket) => {
+            const newState = state.rockets && state.rockets.map((rocket) => {
                 if(rocket.id === payload){
                     return { ...rocket, reserved: true};
                 }

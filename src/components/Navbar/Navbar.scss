@@ -65,13 +65,13 @@ img {
     font-size: 20px;
     text-decoration: none;
 
-    &:hover,
-    &:active {
+    &:hover {
       text-decoration: underline;
+      color: rgb(60, 58, 58);
     }
   }
 }
 
 .active {
-  color: rgb(33, 32, 32);
+  color: rgb(60, 58, 58);
 }

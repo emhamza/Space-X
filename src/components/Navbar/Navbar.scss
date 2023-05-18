@@ -22,8 +22,13 @@ header {
   cursor: pointer;
 
   h1 {
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
+    font-family:
+      "Trebuchet MS",
+      "Lucida Sans Unicode",
+      "Lucida Grande",
+      "Lucida Sans",
+      Arial,
+      sans-serif;
     font-size: 35px;
     margin-top: 6px;
     text-decoration: none;
@@ -51,18 +56,22 @@ img {
 
   // Use the "&" symbol to reference the parent ".links-container" selector
   .nav-routes {
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    font-family:
+      "Gill Sans",
+      "Gill Sans MT",
+      Calibri,
+      "Trebuchet MS",
       sans-serif;
     font-size: 20px;
     text-decoration: none;
 
-    &:hover,
-    &:active {
-      text-decoration: default;
+    &:hover {
+      text-decoration: underline;
+      color: rgb(60, 58, 58);
     }
   }
 }
 
 .active {
-  color: rgb(33, 32, 32);
+  color: rgb(60, 58, 58);
 }

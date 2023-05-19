@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <header>
       <a className="logo-container" href="/">
-        <img src="src/assets\planet.png" alt="logo" />
+        <img src="src/assets/planet.png" alt="logo" />
         <h1>Space Travelers&apos; Hub</h1>
       </a>
       <ul className="links-container">
